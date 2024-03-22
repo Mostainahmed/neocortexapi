@@ -2,68 +2,11 @@
 
 ## Introduction
 
-The parameter MaxNewSynapseCount plays a crucial role in the functioning of Hierarchical Temporal Memory (HTM) networks, particularly in the context of the Temporal Memory (TM) algorithm. This project aims to explore how variations in ```MaxNewSynapseCount``` affect learning efficacy and prediction accuracy within an HTM network specifically in ```Multisequencelearning```. Understanding this influence is pivotal for optimizing HTM configurations to enhance performance on specific tasks.
+In this project, we have tried to log how multiple sequences are learned and what parameters are influenced by HTM config parameter named `MaxNewSynapseCount`. The parameter will influence the number of new snyapse to be created during the learning process. The learning is done in `TemporalMemory.cs` and we have generated report and did analysis on it to provide solid results.
 
 ## Approach
 
-Our work approach encompasses a comprehensive analysis, starting with a theoretical overview of HTM's TM algorithm and identifying the expected impact of ```MaxNewSynapseCount``` on ```Multisequencelearning``` and its ```Run()``` . We proceed with a systematic experimentation phase, wherein we alter ```MaxNewSynapseCount``` across a range of values and observe its effect on ```Multisequencelearning``` 's learning speed and prediction accuracy.
-
-## Implementation details
-
-A significant adjustment in our approach was the modification of the MultiSequenceLearning class, specifically to introduce flexibility in setting the MaxNewSynapseCount. This parameter controls the maximum number of new synapses the TM algorithm can create for each cell that becomes active during learning.
-
-### Constructor Update
-To facilitate experimental variation of ```MaxNewSynapseCount```, we modified the constructor of ```MultiSequenceLearning```:
-
-```csharp
-public MultiSequenceLearning(int maxNewSynapseCount)
-{
-    this.maxNewSynapseCount = maxNewSynapseCount;
-}
-
-
-```
-This alteration allows each experiment run to specify a different ```MaxNewSynapseCount```, enabling a systematic analysis across a range of values.
-
-### Experiment Configuration
-Each experiment instance configures an HTM network with the given MaxNewSynapseCount, alongside other essential parameters within the HtmConfig setup:
-
-```csharp
-HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
-{
-    // Other configuration settings omitted for brevity
-    MaxNewSynapseCount = this.maxNewSynapseCount,
-};
-
-```
-### Experiment Execution
-
-The ```Program.cs``` file orchestrates the execution of learning experiments with varying ```MaxNewSynapseCount``` settings. For each experiment, a set of sequences is learned, and the system's predictive accuracy is evaluated.
-
-Running Experiments with Different Parameters
-Experiments are initiated with specific ```MaxNewSynapseCount``` values, allowing us to observe and compare the effects of this parameter on learning outcomes:
-
-```csharp
-RunMultiSequenceLearningExperiment(20);
-
-```
-
-### Data Logging and Result Generation
-
-To capture the experiment outcomes, we introduced logging within the ```RunExperiment``` method of ```MultiSequenceLearning```. This includes writing the start time, ```MaxNewSynapseCount``` setting, cycle information, match accuracy, and the experiment's end time to a text file:
-
-```csharp
-using (StreamWriter writer = new StreamWriter(filePath, true))
-{
-    // Logging experiment details
-    writer.WriteLine($"Experiment Start: {DateTime.Now}");
-    writer.WriteLine($"MaxNewSynapseCount: {cfg.MaxNewSynapseCount}");
-    // Additional details and results logging
-}
-
-```
-
-### Understanding Multisequence Learning
+1. Understanding Multisequence Learning
 
 ```
 01. Get HTM Config and initialize memory of Connections 
@@ -82,11 +25,13 @@ using (StreamWriter writer = new StreamWriter(filePath, true))
 07. Get the trained Cortex Layer and HTM Classifier
 ```
 
-### Understand TM and identify where `MaxNewSynapseCount` is being used 
+2. Understand TM and identify where `MaxNewSynapseCount` is being used 
 
 ![image](images/UnderstandingTM.jpg)
 
-## MaxNewSynapseCount usage details:
+3. Creating logs, report and analysis to showcase the influence
+
+## Implementation
 
 1. Identify where `MaxNewSynapseCount` is used in TM: `ActivatePredictedColumn()` and `BurstColumn()` which in the end calls `GrowSynapses()` depending on the condition of Active Segment and Matching Segments
 
