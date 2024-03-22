@@ -115,6 +115,45 @@ Now open EffectMaxNewSynapseCount->EffectMaxNewSynapseCount->EffectMaxNewSynapse
 
 ![3](images/3rd_image.png) **->** ![4](images/4th_image.png)
 
+Now open the Solution in Visual Studio and open the solution explorer
+
+![5](images/5th_image.png)
+
+Build the solution from this menu
+
+![6](images/6th_image.png)
+
+Now choose EffectMaxNewSynapseCount from upper menu and run the project, here inside the ```RunMaultiSequenceLearning``` the parameter passed 20 is the number of MaxNewSynapseCount set by default 
+
+![7](images/7th_image.png)
+
+You can see the project starts running and creating log files
+
+![8](images/8th_image.png)
+
+After the project run is complete go to the directory EffectMaxNewSynapseCount->bin->debug->net6.0
+
+![9](images/9th_image.png)
+![10](images/10th_image.png)
+![11](images/11th_image.png)
+![12](images/12th_image.png)
+
+Now choose the text file named `experiment_results_20.txt` because we run the project at 20 MaxNewSynapseCount, the file name changes accordingly with this parameter value
+
+![13](images/13th_image.png)
+
+After opening the txt file we can see the logs and results of predictions and how quickly it takes the Algorithm to peak the accuracy at the given MaxNewSynapsCount
+
+![14](images/14th_image.png)
+
+Now to run the automated tests by which we can compare which MaxNewSynapseCount is better than which just go to Visual Studio and Open the Test explorer and run any given tests. Here you can see between the parameter value 5 and 20, 20 is better which is shown in the test results
+
+![15](images/15th_image.png)
+
+## Results
+
+
+
 
 
 
