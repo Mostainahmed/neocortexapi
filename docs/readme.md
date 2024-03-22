@@ -135,8 +135,6 @@ After the project run is complete go to the directory EffectMaxNewSynapseCount->
 
 ![9](images/9th_image.png)
 ![10](images/10th_image.png)
-![11](images/11th_image.png)
-![12](images/12th_image.png)
 
 Now choose the text file named `experiment_results_20.txt` because we run the project at 20 MaxNewSynapseCount, the file name changes accordingly with this parameter value
 
