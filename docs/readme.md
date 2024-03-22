@@ -100,6 +100,21 @@ using (StreamWriter writer = new StreamWriter(filePath, true))
 
 ```
 
-## 
+## Run the Project
+
+In order to run the project, the project [repository](https://github.com/Fathir-shishir/neocortexapi) can be cloned in the local system. After that, go to the source folder
+(Make sure to checkout the branch team_AS) [for that open command prompt in the root folder run ```git checkout team_AS```] 
+
+![1](https://user-images.githubusercontent.com/62109347/228389657-60034ea0-920d-4af3-a018-f923e8b010fd.png)
+
+Open MySEProject
+
+![2](images/2nd_image.png)
+
+Now open EffectMaxNewSynapseCount->EffectMaxNewSynapseCount->EffectMaxNewSynapseCount.sln
+
+![3](images/3rd_image.png) **->** ![4](images/4th_image.png)
+
+
 
 
