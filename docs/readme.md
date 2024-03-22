@@ -29,7 +29,7 @@ The parameter MaxNewSynapseCount plays a crucial role in the functioning of Hier
 
 ## Architecture:
 
-![Architecture](images/archi_image.png)
+![Architecture](images/architecture_image.png)
 
 Flow Chart of the work process:
 
