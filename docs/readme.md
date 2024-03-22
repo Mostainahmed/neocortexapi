@@ -160,18 +160,18 @@ The results we have found after running the MultiSequenceLearning Algorithm are 
 | MaxNewSynapseCount | Cycles to Stabilize |
 |--------------------|---------------------|
 | 10                 | Leraning didn't happen|
-| 20                 | 284                 |
+| 20                 | 230                 |
 | 30                 | 267                 |
 | 40                 | 301                 |
 | 50                 | 234                 |
 
 | MaxNewSynapseCount | Accuracy (%) |
 |--------------------|--------------|
-| 10                 | 85.0         |
-| 20                 | 93.5         |
-| 30                 | 90.2         |
-| 40                 | 91.8         |
-| 50                 | 87.7         |
+| 10                 | didn't learn |
+| 20                 | 85.7         |
+| 30                 | 83.2         |
+| 40                 | 85.7         |
+| 50                 | 85.7         |
 
 Here we can see in terms of Cycle count and accuracy, `MaxNewSynapseCount` value `20` performs better
 
